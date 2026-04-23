@@ -1,27 +1,27 @@
 console.log("Desafio do Herói");
-let heroName = "Dave Oliveira";
-let heroWins = 9000;
-const msg = "O  Herói de nome "
-const msgF = " está no nível: "
 
-if (heroWins < 10){
-console.log(msg + heroName + msgF + "Ferro" )    
+function calcularNivel(vitorias, derrotas) {
+  const saldoVitorias = vitorias - derrotas;
+  let nivel;
+
+  if (saldoVitorias < 10) {
+    nivel = "Ferro";
+  } else if (saldoVitorias <= 20) {
+    nivel = "Bronze";
+  } else if (saldoVitorias <= 50) {
+    nivel = "Prata";
+  } else if (saldoVitorias <= 80) {
+    nivel = "Ouro";
+  } else if (saldoVitorias <= 90) {
+    nivel = "Diamante";
+  } else if (saldoVitorias <= 100) {
+    nivel = "Lendário";
+  } else {
+    nivel = "Imortal";
+  }
+
+  return `O Herói tem saldo de ${saldoVitorias} está no nível de ${nivel}`;
 }
-else if (heroWins <= 20){
-console.log(msg + heroName + msgF + "Bronze")    
-}
-else if (heroWins <= 50){
-console.log(msg + heroName + msgF + "Prata")    
-}
-else if (heroWins <= 80){
-console.log(msg + heroName + msgF + "Ouro")    
-}
-else if (heroWins <= 90){
-console.log(msg + heroName + msgF + "Diamante")    
-}
-else if (heroWins <= 100){
-console.log(msg + heroName + msgF + "Lendário")    
-}
-else if (heroWins <= 101){
-console.log(msg + heroName + msgF + "Imortal")    
-}
+
+let resultado = calcularNivel(9000, 8800);
+console.log(resultado);
